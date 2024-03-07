@@ -25,28 +25,30 @@ $(document).ready(function () {
     console.log(`Filter Applied: ${filter}`);
   }
 
-
-
-
-
   $("#forminput").focus(function () {
     $(".header_form_result").slideDown();
   });
   $("#forminput").blur(function () {
     $(".header_form_result").slideUp();
   });
+  $("#searchInput")
+    .focus(function () {
+      $(".search_result_main").slideToggle();
+    })
+    .blur(function () {
+      $(".search_result_main").slideUp();
+    });
 
-
-  $(window).scroll(function(){
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 30) {
-      $('#scrollBtn').fadeIn();
+      $("#scrollBtn").fadeIn();
     } else {
-      $('#scrollBtn').fadeOut();
+      $("#scrollBtn").fadeOut();
     }
   });
 
-  $('#scrollBtn').click(function(){
-    $('html, body').animate({scrollTop : 0},800);
+  $("#scrollBtn").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 800);
     return false;
   });
 });

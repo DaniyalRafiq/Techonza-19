@@ -54,7 +54,7 @@
     --font-800: RubikExtraBold;
     --font-900: RubikBlack;
 
-    --primary-50 : #FFACB7;
+    --primary-50: #FFACB7;
     --primary-100: #f5919e;
     --primary-200: #ec7686;
     --primary-300: #e25b6d;
@@ -69,7 +69,7 @@
     --primary-gradient-light: linear-gradient(to right, var(--primary-100) 10%, var(--primary-200) 90%);
     --primary-gradient-light-reverse: linear-gradient(to right, var(--primary-200) 10%, var(--primary-100) 90%);
 
-    --secondary-50 : #ffeb99;
+    --secondary-50: #ffeb99;
     --secondary-100: #ffe67f;
     --secondary-200: #ffe166;
     --secondary-300: #ffdc4d;
@@ -195,9 +195,6 @@ textarea {
     display: none !important;
 }
 
-.show {
-    display: flex !important;
-}
 
 .menu {
     border: none;
@@ -577,6 +574,43 @@ header.header {
 
 }
 
+.search_result_main {
+    display: none;
+    /* gap: 5px; */
+    border-radius: 5px;
+    position: absolute;
+    top: 100%;
+    z-index: 5;
+    left: 0;
+    width: 100%;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.header_form_card_result {
+    background: var(--gray-50);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 15px;
+    width: 100%;
+    max-height: 292px;
+    overflow: auto;
+    box-shadow: var(--box-shadow);
+}
+
+.search_keys {
+    padding: 10px;
+    background: white;
+    width: 100%;
+    text-align: left;
+}
+
+.search_keys h4 {
+    font-size: clamp(15px, 2vw, 17px);
+    font-family: var(--font-500);
+}
+
 /* ==========Header_End==========*/
 
 
@@ -630,14 +664,15 @@ header.header {
     width: 100%;
     max-width: 600px;
     border-radius: 5px;
+    position: relative;
     flex-direction: column;
     display: flex;
-    gap: 14px;
+    /* gap: 14px; */
     /* From https: //css.glass */
     border-radius: 7px;
     backdrop-filter: blur(6.3px);
-    border: 1px solid rgb(66 66 66 / 45%);
-    overflow: hidden;
+    /* border: 1px solid rgb(66 66 66 / 45%); */
+    /* overflow: hidden; */
 }
 
 .hero_form {
@@ -720,6 +755,7 @@ header.header {
     background: var(--white);
     border-radius: 5px;
     box-shadow: 0 0 5px #0001;
+    background: white;
 }
 
 .store_card figure img {
@@ -982,9 +1018,9 @@ header.header {
     margin-right: 3px;
 }
 
-.subscribe_start_main  > p {
-    font-size: 16px;
-    color: var(--black);
+.subscribe_start_main>p {
+    font-size: 15px;
+    color: var(--gray-500);
 }
 
 .popular_store_main {
@@ -1453,3 +1489,114 @@ textarea {
 }
 
 /* ==========Contact_us_End==========*/
+
+
+
+/* ==========Modal_start==========*/
+.moda_btn_close {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-500);
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    right: 7px;
+    transition: .3s;
+    top: 7px;
+    rotate: 0deg;
+}
+
+.modal_main {
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.modal_main figure {
+    height: 110px;
+    width: 120px;
+    border: 1px solid var(--gray-100);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.modal_content h4 {
+    font-size: clamp(19px, 2.5vw, 21px);
+    font-family: var(--font-600);
+}
+
+.modal_content {
+    padding-top: 10px;
+    border-top: 1px solid var(--gray-200);
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+}
+
+.modal_content>p {
+    font-size: 14px;
+    color: gray;
+}
+
+.moda_btn_close:hover {
+    rotate: 180deg;
+}
+
+.click_code_main {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 10px 15px;
+}
+
+.copy_code {
+    border: 2px solid var(--primary-200);
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+.copy_code span {
+    flex: 1;
+}
+
+
+
+.copy_code_btn.visit_store {
+    flex: 0 0 119px;
+    height: 34px;
+}
+
+.copy_code_btn {
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    gap: 5px;
+    background: var(--primary-300);
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: white;
+    transition: 0.3s;
+    font-size: clamp(12px, 2vw, 14px);
+    border-radius: 3px;
+}
+
+.copy_code_btn:hover {
+    background: var(--primary-500);
+}
+
+.modal-footer {
+    background: var(--gray-100);
+}
+
+/* ==========Modal_End==========*/
